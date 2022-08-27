@@ -22,7 +22,7 @@ KT Logger is based on Django Log Viewer.
 Clone the project
 
 ```bash
-  git clone https://link-para-o-projeto
+  git clone https://github.com/riquedev/KTLogger
 ```
 
 Enter the project directory
