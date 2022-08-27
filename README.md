@@ -1,6 +1,6 @@
 # KT Logger
 KT Logger allows you to read and download log files from the Django admin page.
-KT Log is based on Django Log Viewer.
+KT Logger is based on Django Log Viewer.
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/riquedevbr)
 

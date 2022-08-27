@@ -1,7 +1,7 @@
 kt_logger/
 /logs/*.log
-static/
-templates/
+/static/
+/templates/
 /venv/
 /.idea/
 koter-*-firebase*.json
