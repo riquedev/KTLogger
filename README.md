@@ -73,7 +73,7 @@ KT_LOG_LEVEL_PATTERN = {
     "ERROR": re.compile(r'(\[ERROR])', flags=re.IGNORECASE),
     "CRITICAL": re.compile(r'(\[CRITICAL])', flags=re.IGNORECASE),
 }
-LOG_VIEWER_EXCLUDE_TEXT_PATTERN = None
+KT_LOG_VIEWER_EXCLUDE_TEXT_PATTERN = None
 
 ```
 
