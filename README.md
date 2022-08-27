@@ -6,7 +6,7 @@ KT Logger is based on Django Log Viewer.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](LICENSE)
 
 
 ## Screenshots
