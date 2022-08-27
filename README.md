@@ -41,7 +41,7 @@ Add "KTLogger" and "ajax_datatable" to your "INSTALLED_APPS"
 
 ```python
 INSTALLED_APPS = [   
-    ...    
+    ...,    
     'KTLogger',
     'ajax_datatable',
 ]
@@ -51,7 +51,7 @@ Add the urls
 ```python
 from django.urls import path, include
 urlpatterns = [
-    ...
+    ...,
     path("kt-logs/", include("KTLogger.urls"))
 ]
 ```
