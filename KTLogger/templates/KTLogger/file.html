@@ -1,0 +1,63 @@
+{% extends "admin/base_site.html" %}
+{% load static i18n kt_datatable %}
+{% block title %}{% trans "KT Logger" %} - {{ file.name }}{{ block.super }}{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+        &rsaquo;
+        <a href="{% url 'KTLogger:files' %}">
+            {% if custom_file_list_title %}{{ custom_file_list_title }}{% else %}{% trans "KT Logger" %}{% endif %}</a>
+        >
+        <a href="{% url 'admin:index' %}">{{ file }}</a>
+    </div>
+{% endblock %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link href="{% static 'ajax_datatable/css/style.css' %}" rel="stylesheet"/>
+    <link href="{% static 'kt_datatable/datatables.min.css' %}" rel="stylesheet"/>
+
+{% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'ajax_datatable/js/utils.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ajax_datatable/js/jquery-3.5.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'kt_datatable/datatables.min.js' %}"></script>
+
+{% endblock %}
+
+{% block content %}
+    <div class="django__kt__logger">
+        <div id="content-main">
+            <div class="module filtered" id="changelist">
+                <form id="changelist-form" class="changelist-form-container">
+                    <div class="results">
+                        <div class="headers">
+                            <h1 class="pull-left">{{ file.name }}</h1>
+                            <div class="download-buttons">
+                                <a href="{% url 'KTLogger:files-download' %}"
+                                   class="btn-download pull-right">{% trans "Download all Log Files" %}</a>
+                                <a href="{% url 'KTLogger:files-download' file=file %}" class="btn-download pull-right btn-download-this-log">{% trans "Download this Log File" %}</a>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="datatable_logs" width="100%"
+                                   class="table table-striped table-bordered dt-responsive compact">
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    {% with 'copy excel pdf csv' as buttons %}
+        {% kwargs_to_dict dom="Blfrtip" filter=True deferRender=True processing=True autoWidth=True full_row_select=False scrollX=False buttons=buttons.split bFilter=False as datatable_setup %}
+        {% url 'KTLogger:datatable-file' file=file as ajax_url %}
+        {% render_datatable_view_utils table_html_id="datatable_logs" table_ajax_url=ajax_url table_setup=datatable_setup %}
+    {% endwith %}
+
+{% endblock %}

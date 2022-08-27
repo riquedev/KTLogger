@@ -1,0 +1,13 @@
+{% load static %}
+{% spaceless %}
+    <script>
+        $(document).ready(function () {
+            AjaxDatatableViewUtils.initialize_table(
+                $('#{{ table_html_id }}'),
+                "{{ table_ajax_url }}",
+                {{ table_setup|safe }},
+                {{ table_additional_data|safe }}
+            );
+        });
+    </script>
+{% endspaceless %}
