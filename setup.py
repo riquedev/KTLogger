@@ -5,6 +5,9 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="KTLogger",
+    packages=setuptools.find_packages(exclude=("kt_logger", "kt_logger.*", "tests", "logs", "example_app", "resources",)),
+    package_data={'KTLogger': ["static/**", "templates/**"]},
+    include_package_data=True,
     version="0.0.1",
     author="Henrique da Silva Santos",
     author_email="henrique.santos@4u360.com.br",
@@ -23,7 +26,8 @@ setuptools.setup(
         'Django>=3.2.14',
         'datefinder',
         'django_mock_queries',
-        'file_read_backwards'
+        'file_read_backwards',
+        'django-ajax-datatable'
     ],
     classifiers=[
         "Framework :: Django",
@@ -31,7 +35,5 @@ setuptools.setup(
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3"
     ],
-    packages=setuptools.find_packages(exclude=("kt_logger", "kt_logger.*", "tests", "logs", "example_app","resources",)),
-    include_package_data=True,
     python_requires=">=3.7"
 )
