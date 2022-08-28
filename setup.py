@@ -8,7 +8,7 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=("kt_logger", "kt_logger.*", "tests", "logs", "example_app", "resources",)),
     package_data={'KTLogger': ["static/**", "templates/**"]},
     include_package_data=True,
-    version="0.0.1",
+    version="0.0.2",
     author="Henrique da Silva Santos",
     author_email="henrique.santos@4u360.com.br",
     description="""KT Logger allows you to read and download log files from the Django admin page.
