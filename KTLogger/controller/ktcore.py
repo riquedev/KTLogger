@@ -46,6 +46,7 @@ class KTCore:
         pos = cls.get_file_line_count(file)
         max_lines = KT_LOG_VIEWER_MAX_READ_LINES
         line_limit = (pos - max_lines) + 1
+        pos += 1
         if line_limit < 0:
             line_limit = 0
         if pathlib.Path(file).exists():
