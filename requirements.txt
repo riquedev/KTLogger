@@ -1,5 +1,5 @@
 datefinder==0.7.3
-Django==4.1
+Django==4.1.7
 django_mock_queries==2.1.7
 file_read_backwards==2.0.0
 setuptools==60.2.0
